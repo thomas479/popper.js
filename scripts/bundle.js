@@ -42,11 +42,11 @@ const bundleFactory = (es5, ext, format) => done => {
 };
 
 const umd_es5 = bundleFactory(true, 'umd', 'umd');
-const esm_es5 = bundleFactory(true, 'esm', 'es');
-const esm_es6 = bundleFactory(false, '', 'es');
+//const esm_es5 = bundleFactory(true, 'esm', 'es');
+//const esm_es6 = bundleFactory(false, '', 'es');
 
 console.info(colors.green(`⚙️  Compiling target '${build}'...`));
-parallel([umd_es5, esm_es5, esm_es6], error => {
+parallel([umd_es5/*, esm_es5, esm_es6*/], error => {
   if (error) {
     console.error(`${build}: ${error}`);
   }
